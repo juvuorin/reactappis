@@ -2,41 +2,31 @@
 //import './App.css';
 
 import React, { useState } from 'react';
-
+import Nappula from './Nappula'
 function App() {
 
-  const [ylempiLista,setYlempiLista] = useState(["Paavo", "Tytti","Ilkka","Sauli"])
-  const [alempiLista,setAlempiLista] = useState([])
+  
+  const [kirjaimet, setKirjaimet] = useState(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+", "="])
+  const [näyttö,setNäyttö] = useState("")
+  // deep copy, shallow copy
+  
+  const lisääMerkki = (merkki) =>{
 
-  const alasPainettu = () =>{
-    let ylemmanViimeinenAlkio = ylempiLista[ylempiLista.length-1]
-    setAlempiLista([...alempiLista,ylemmanViimeinenAlkio])
-    ylempiLista.pop()
-    setYlempiLista([...ylempiLista])
-    
-   
+    if (merkki==="=") {
+      setNäyttö(eval (näyttö))
+    } else {
+      setNäyttö(näyttö+merkki)
+    }
   }
-  const ylösPainettu = () =>{
+  return (<div><div>{näyttö}
 
-    let alemmanEkaAlkio = alempiLista[0]
-    setYlempiLista([...ylempiLista, alemmanEkaAlkio])
-    alempiLista.shift()
-    setAlempiLista([...alempiLista])
-      
-  }
+  </div><div class="grid">
+      {kirjaimet.map((kirjain) => <Nappula sisältö={kirjain} lisääMerkki={lisääMerkki}> </Nappula>)}
+     
 
-  return (<div>
-    {ylempiLista.map(item=><div>{item}</div>)}
-    <button onClick={ylösPainettu}   >ylös</button>
-    <button onClick={alasPainettu}>alas</button>
-    {alempiLista.map(item=><div>{item}</div>)}
-
-
-  </div>
-
-
-  )
+    </div></div>)
 
 }
 
 export default App;
+

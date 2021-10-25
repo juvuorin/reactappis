@@ -11,67 +11,54 @@ function App() {
 
   const [kategoriat, setKategoriat] = useState([])
   const [ladattu, setLadattu] = useState(false)
-  const [kategoria, setKategoria] =useState(0)
-  const [items, setItems] =useState([])
-
+  const [kategoria, setKategoria] = useState(0)
+  const [items, setItems] = useState([])
   useEffect(() => {
-
-    /* async
-    try {
-
-    } catch {}
-    finally{} */
-
-    axios.get('https://api.huuto.net/1.1/categories')
-      .then(function (response) {
-        // handle success
+    const fetchData = async () => {
+      try {
+        let response = await axios.get('https://api.huuto.net/1.1/categories')
+        // handle success///
         console.log(response.data.categories)
         setKategoriat(response.data.categories);
         setLadattu(true)
-
-      })
-      .catch(function (error) {
-        // handle error
+      } catch (error) {
         console.log(error);
-      })
-      .then(function () {
+      } finally {
         console.log("Tämö suoritetaan aina")
-        // always executed
-      });
-    console.log("kutsuttiin")
+
+      }
+    }
+    fetchData();
   }, []);
 
   useEffect(() => {
 
-    /* async
-    try {
-
-    } catch {}
-    finally{} */
-    axios.get('https://api.huuto.net/1.1/items?category='+kategoria)
-      .then(function (response) {
-        // handle success
+    const fetchData = async () => {
+      try {
+        let response = await axios.get('https://api.huuto.net/1.1/items?category=' + kategoria)
+        // handle success///
         console.log(response.data.items)
-        setItems(response.data.items)     
-      })
-      .catch(function (error) {
-        // handle error
+        setItems(response.data.items)
+
+      } catch (error) {
         console.log(error);
-      })
-      .then(function () {
+      } finally {
         console.log("Tämö suoritetaan aina")
-        // always executed
-      });
-    console.log("kutsuttiin")
-  }, [kategoria]);
-  const kategoriaPainettu=(id)=>{
+
+      }
+      fetchData();
+
+    }
+  }, [kategoria])
+
+  const kategoriaPainettu = (id) => {
     setKategoria(id)
     console.log(id)
   }
   return (
     <div>
-      {!ladattu?"Dataa lataillaan....":kategoriat.map(kategoria=><button onClick={()=>kategoriaPainettu(kategoria.id)} key={kategoria.id}>{kategoria.title}</button>)}
-      <div>{items.map(item=><div>{item.title}</div>)}</div>
+      {!ladattu ? "Dataa lataillaan...." : kategoriat.map(kategoria => <button onClick={() => kategoriaPainettu(kategoria.id)} key={kategoria.id}>{kategoria.title}</button>)}
+      <div>{items.map(item => <div>{item.title}</div>)}</div>
     </div>
   );
 }

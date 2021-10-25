@@ -31,30 +31,6 @@ function App() {
     fetchData();
   }, []);
 
-  useEffect(() => {
-
-    const fetchData = async () => {
-      try {
-        let response = await axios.get('https://api.huuto.net/1.1/items?category=' + kategoria)
-        // handle success///
-        console.log(response.data.items)
-        setItems(response.data.items)
-
-      } catch (error) {
-        console.log(error);
-      } finally {
-        console.log("Tämö suoritetaan aina")
-
-      }
-      fetchData();
-
-    }
-  }, [kategoria])
-
-  const kategoriaPainettu = (id) => {
-    setKategoria(id)
-    console.log(id)
-  }
   return (
     <div>
       {!ladattu ? "Dataa lataillaan...." : kategoriat.map(kategoria => <button onClick={() => kategoriaPainettu(kategoria.id)} key={kategoria.id}>{kategoria.title}</button>)}

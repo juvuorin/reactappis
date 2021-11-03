@@ -31,10 +31,11 @@ function Koulu() {
         koulu.luokat.push({ kirjain: "C", oppilaat: [] })
         console.log(koulu.luokat)
 
-        let uusiKoulu=JSON.parse(JSON.stringify(koulu)) 
+//        let uusiKoulu=JSON.parse(JSON.stringify(koulu)) 
         //koulu === uusiKoulu
+//        let uusiKoulu={...koulu} 
 
-        setKoulu(uusiKoulu)
+        setKoulu({...koulu})
         
 
     }

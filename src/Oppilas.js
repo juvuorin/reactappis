@@ -4,7 +4,8 @@ function Oppilas(p) {
     const poistaOppilas = (index)=>{
 //        p.luokka.oppilaat
         p.luokka.oppilaat.splice(index,1)
-        p.setKoulu(JSON.parse(JSON.stringify(p.koulu)))
+      //  p.setKoulu(JSON.parse(JSON.stringify(p.koulu)))
+        p.setKoulu({...p.koulu})
 
     }
 

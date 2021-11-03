@@ -4,9 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Timer from './Timer'
+import Counter from './Counter'
+
+import Koulu from './Koulu'
+
 ReactDOM.render(
   <React.StrictMode>
-    <Timer />
+    <Koulu />
   </React.StrictMode>,
   document.getElementById('root')
 );

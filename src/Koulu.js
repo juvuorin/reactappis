@@ -5,17 +5,17 @@ import React, { useState } from 'react';
 //Tentti1
 import Luokka from './Luokka';
 
-let oppilas1 = { nimi: "Otto Onninpoika" }
-let oppilas2 = { nimi: "Pekka Perä" }
-let oppilas3 = { nimi: "Tarmo Tiusanen" }
+let oppilas1 = { nimi: "Otto Onninpoika", osaalukea:true }
+let oppilas2 = { nimi: "Pekka Perä",osaalukea:false }
+let oppilas3 = { nimi: "Tarmo Tiusanen",osaalukea:true }
 
 let luokka1 = { kirjain: "A", oppilaat: [oppilas1, oppilas2, oppilas3] }
 
 
-let oppilas4 = { nimi: "Raimo Riitala" }
-let oppilas5 = { nimi: "Kirski Kokkonen" }
-let oppilas6 = { nimi: "Fabian Fedorov" }
-let oppilas7 = { nimi: "Daniel Downing" }
+let oppilas4 = { nimi: "Raimo Riitala" ,osaalukea:true}
+let oppilas5 = { nimi: "Kirski Kokkonen",osaalukea:false }
+let oppilas6 = { nimi: "Fabian Fedorov" ,osaalukea:true}
+let oppilas7 = { nimi: "Daniel Downing",osaalukea:true }
 
 let luokka2 = { kirjain: "B", oppilaat: [oppilas4, oppilas5, oppilas6, oppilas7] }
 
@@ -41,15 +41,21 @@ function Koulu() {
             case "LISÄÄ_OPPILAS":
                 kouluKopio.luokat[o.data.luokkaIndex].oppilaat.push({ nimi: "Olli Oppilas" })
                 break;
-
             case "LISÄÄ_LUOKKA":
                 kouluKopio.luokat.push({ kirjain: "T", oppilaat: [] })
                 break;
-
+            case "OPPILAAN_NIMI_MUUTTUI":
+                kouluKopio.luokat[o.data.luokkaIndex].oppilaat[o.data.oppilasIndex].nimi=o.data.nimi
+                break;
+            case "OPPILAAN_LUKUTAITOTIETO_MUUTTUI":
+                kouluKopio.luokat[o.data.luokkaIndex].oppilaat[o.data.oppilasIndex].osaalukea=!kouluKopio.luokat[o.data.luokkaIndex].oppilaat[o.data.oppilasIndex].osaalukea
+                break;
             default: throw "Nyt on jokin vialla"
+            
 
 
         }
+        console.log(kouluKopio)   
         setKoulu(kouluKopio)
 
     }

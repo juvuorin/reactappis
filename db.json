@@ -25,23 +25,42 @@
       "luokat": []
     },
     {
-      "id": "130d18a3f41",
-      "koulunNimi": 5,
-      "luokat": []
-    },
-    {
       "id": "878ae917b4c",
       "koulunNimi": 3,
+      "luokat": [
+        {
+          "kirjain": "T",
+          "oppilaat": [
+            {
+              "nimi": "Mdsfdsfdssdfs",
+              "osaalukea": true
+            },
+            {
+              "nimi": "Malli Oppilas",
+              "osaalukea": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "53147eb0cf3",
+      "koulunNimi": "oletusnimi",
       "luokat": []
     },
     {
-      "id": "78ae917b4cc",
-      "koulunNimi": 4,
+      "id": "3147eb0cf37",
+      "koulunNimi": "oletusnimi",
       "luokat": []
     },
     {
-      "id": "8ae917b4cc6",
-      "koulunNimi": 5,
+      "id": "147eb0cf379",
+      "koulunNimi": "oletusnimi",
+      "luokat": []
+    },
+    {
+      "id": "47eb0cf379b",
+      "koulunNimi": "oletusnimi",
       "luokat": []
     }
   ]

@@ -7,11 +7,14 @@ const axios = require('axios');
 //Tentti1
 
 
+//Put, Delete, post??
+
 
 const KouluSovellus=(props)=> {
     const [dataNoudettu, setDataNoudettu] = useState(false)
     const [koulut, setKoulut] = useState()
     const [valittuKoulu,setValittuKoulu] = useState()
+    //const [dispatch] = useReducer (reducer)
     //    [koulu, setKoulu] = useState(koulu)
 //    console.log("Koulu renderöitiin")
     //REDUX
@@ -19,7 +22,7 @@ const KouluSovellus=(props)=> {
         //  o = {type:"POISTA_OPPILAS",data: {oppilasIndex:0, luokkaIndex:0}}
         let koulutKopio = (JSON.parse(JSON.stringify(koulut)))
         // let kouluKopio = koulu
-
+i
         switch (o.type) {
              case "POISTA_OPPILAS":
                 koulutKopio[valittuKoulu].luokat[o.data.luokkaIndex].oppilaat.splice(o.data.oppilasIndex, 1)
@@ -50,6 +53,8 @@ const KouluSovellus=(props)=> {
         setKoulut(koulutKopio);
 
     }
+
+
     useEffect(() => {
         if (!dataNoudettu) {
             axios.get('http://localhost:3001/koulut')

@@ -59,9 +59,24 @@
       "luokat": []
     },
     {
-      "id": "47eb0cf379b",
+      "id": "736c3765cfa",
       "koulunNimi": "oletusnimi",
       "luokat": []
+    },
+    {
+      "id": "36c3765cfa2",
+      "koulunNimi": "oletusnimi",
+      "luokat": [
+        {
+          "kirjain": "T",
+          "oppilaat": [
+            {
+              "nimi": "Olli Jalmari Kujanpää",
+              "osaalukea": true
+            }
+          ]
+        }
+      ]
     }
   ]
 }

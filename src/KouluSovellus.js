@@ -168,7 +168,7 @@ const KouluSovellus = (props) => {
                 }
         }
 
-    }, [dataNoudettu, päivitäKoulu, poistaKoulu,lisääKoulu,päivitäKoulu_, poistaKoulu_,lisääKoulu_])
+    }, [dataNoudettu, päivitäKoulu, poistaKoulu,lisääKoulu])
 
     console.log("Valittu koulu on:" + valittuKoulu)
 
@@ -176,7 +176,11 @@ const KouluSovellus = (props) => {
         <button key={item.id} onClick={() => { setValittuKoulu(index) }}>Näytä koulu {item.koulunNimi} </button>)}
         <button onClick={() => dispatch({ type: "LISÄÄ_KOULU" })}  >Lisää koulu</button>
 
-        {(valittuKoulu !== undefined) && <div><Koulu koulu={koulut[valittuKoulu]} dispatch={dispatch} setKoulut={setKoulut} kouluIndex={valittuKoulu} koulut={koulut}></Koulu><button onClick={() => dispatch({ type: "POISTA_KOULU" })}   >Poista koulu</button></div>}
+        {(valittuKoulu !== undefined) && <div>
+            <Koulu                                      koulu={koulut[valittuKoulu]} 
+                                                        dispatch={dispatch}
+                                                        kouluIndex={valittuKoulu}>
+            </Koulu><button onClick={() => dispatch({ type: "POISTA_KOULU" })}   >Poista koulu</button></div>}
     </div>}</div>);
 }
 export default KouluSovellus;

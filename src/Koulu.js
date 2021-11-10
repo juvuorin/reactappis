@@ -36,7 +36,7 @@ const Koulu=(props)=> {
     }, [props.koulu])
  */
     
-    console.log(koulu)
+    //console.log(koulu)
     return (<div> <div>{props.koulu.koulunNimi}{props.koulu.luokat.map((item, index) => <Luokka luokka={item} luokkaIndex={index} dispatch={props.dispatch} koulu={props.koulu} />)}
         <button onClick={() => props.dispatch({ type: "LISÄÄ_LUOKKA" })}>Lisää luokka</button>
 

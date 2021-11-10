@@ -1,7 +1,48 @@
-
 {
-    "koulut": [
-      {"id":1,"koulunNimi":"Pikkolan ala-aste", "luokat":[{ "kirjain": "A", "oppilaat": [{ "nimi": "Otto Onninpoika", "osaalukea": true }, { "nimi": "Pekka Perä", "osaalukea": false }]}]}
-    ]
+  "koulut": [
+    {
+      "id": 0,
+      "koulunNimi": "Pikkolan ala-aste",
+      "luokat": [
+        {
+          "kirjain": "A",
+          "oppilaat": [
+            {
+              "nimi": "Otto Onninpoika",
+              "osaalukea": true
+            },
+            {
+              "nimi": "Pekka Perä",
+              "osaalukea": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9c07130d18a",
+      "koulunNimi": 4,
+      "luokat": []
+    },
+    {
+      "id": "130d18a3f41",
+      "koulunNimi": 5,
+      "luokat": []
+    },
+    {
+      "id": "878ae917b4c",
+      "koulunNimi": 3,
+      "luokat": []
+    },
+    {
+      "id": "78ae917b4cc",
+      "koulunNimi": 4,
+      "luokat": []
+    },
+    {
+      "id": "8ae917b4cc6",
+      "koulunNimi": 5,
+      "luokat": []
+    }
+  ]
 }
-

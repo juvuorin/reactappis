@@ -23,21 +23,9 @@ var koulu_ = { nimi: "alakoulu", luokat: [luokka1, luokka2] }
 
 // propseista tulee "koulu"
 const Koulu=(props)=> {
-    //const [dataNoudettu, setDataNoudettu] = useState(false)
-    //const [koulu, setKoulu] = useState()
-    //    [koulu, setKoulu] = useState(koulu)
-    //console.log("Koulu renderöitiin")
-    //REDUX
 
-   /*  useEffect(() => {
-
-       setKoulu(props.koulu)
-
-    }, [props.koulu])
- */
-    
-    //console.log(koulu)
-    return (<div> <div>{props.koulu.koulunNimi}{props.koulu.luokat.map((item, index) => <Luokka luokka={item} luokkaIndex={index} dispatch={props.dispatch} koulu={props.koulu} />)}
+    console.log("koulu:",props.koulu)
+    return (<div> <div>{props.koulu.koulunNimi}{props.koulu.luokat.map((item, index) => <Luokka key={index} luokka={item} luokkaIndex={index} dispatch={props.dispatch} koulu={props.koulu} />)}
         <button onClick={() => props.dispatch({ type: "LISÄÄ_LUOKKA" })}>Lisää luokka</button>
 
     </div></div>);

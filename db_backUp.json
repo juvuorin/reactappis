@@ -1,0 +1,33 @@
+{
+    "koulut": [
+      {
+        "id": 0,
+        "koulunNimi": "Pikkolan ala-aste",
+        "luokat": [
+          {
+            "kirjain": "A",
+            "oppilaat": [
+              {
+                "nimi": "Otto Onninpoika",
+                "osaalukea": true
+              },
+              {
+                "nimi": "Pekka Perä",
+                "osaalukea": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "koulunNimi": 1,
+        "luokat": []
+      },
+      {
+        "id": 2,
+        "koulunNimi": 2,
+        "luokat": []
+      }
+    ]
+  }

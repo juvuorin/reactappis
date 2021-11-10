@@ -6,11 +6,11 @@ import reportWebVitals from './reportWebVitals';
 import Timer from './Timer'
 import Counter from './Counter'
 
-import Koulu from './Koulu'
+import KouluSovellus from './KouluSovellus'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Koulu />
+    <KouluSovellus />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -75,17 +75,17 @@ const KouluSovellus = (props) => {
         axios.put('http://localhost:3001/koulut/' + koulut[valittuKoulu].id, koulut[valittuKoulu])
             .then(function (response) {
                 // handle success
-                setPäivitäKoulu(false)
                 console.log("koulun tiedot päivitetty ok");
 
             })
             .catch(function (error) {
                 // handle error
                 console.log(error);
-                setPäivitäKoulu(false)
 
             })
             .then(function () {
+                setPäivitäKoulu(false)
+
                 // always executed
             });
 
@@ -102,11 +102,13 @@ const KouluSovellus = (props) => {
 
             //awaitin jälkeen jokainen näistä johtaa renderöitiin - ei batchia!
             setValittuKoulu(undefined) 
-            setPoistaKoulu(false)
             setKoulut(koulutKopio)
           
-        } catch (a) {
+        } catch (e) {
 
+        } finally {
+            setPoistaKoulu(false)
+         
         }
 
     }
@@ -123,7 +125,6 @@ const KouluSovellus = (props) => {
                 console.log("koulu lisätty ok");
                 koulutKopio.push(uusiKoulu)
                 setValittuKoulu(undefined)
-                setLisääKoulu(false)
                 setKoulut(koulutKopio);
      
             })
@@ -132,6 +133,8 @@ const KouluSovellus = (props) => {
                 console.log(error);
             })
             .then(function () {
+                setLisääKoulu(false)
+
                 // always executed
             });
     }
